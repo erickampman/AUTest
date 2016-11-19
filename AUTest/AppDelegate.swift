@@ -11,11 +11,11 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-	@IBOutlet weak var window: NSWindow!
-
-
+	var auTestWindowController: AUTestWindowController!
+	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
+		auTestWindowController = AUTestWindowController(windowNibName: "AUTestWindowController")
+		auTestWindowController.showWindow(self)
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
