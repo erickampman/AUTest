@@ -12,13 +12,29 @@ class AUTestWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+		
+		auController.setupSynth()
+		auController.setupEffect()
     }
     
-	@IBAction func play(_ sender: NSButton) {
+	@IBAction func playStop(_ sender: NSButton) {
+		if auController.isPlaying {
+			auController.stopPlaying()
+		} else {
+			auController.startPlaying()
+		}
 	}
+	
+	dynamic var playButtonTitle: String {
+		get {
+			return auController.isPlaying ? "Stop" : "Play"
+		}
+	}
+	
 	@IBOutlet weak var showSynthButton: NSButton!
 	@IBOutlet weak var showEffectButton: NSButton!
+	@IBOutlet weak var playButton: NSButton!
 	@IBOutlet var popover: NSPopover!
+	
+	dynamic let auController = AUController()
 }

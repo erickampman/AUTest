@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AUTestWindowController" customModule="AUTest" customModuleProvider="target">
             <connections>
+                <outlet property="playButton" destination="feP-bh-5yl" id="MYz-rS-6cF"/>
                 <outlet property="popover" destination="dVa-wl-s6U" id="VO3-3m-N1U"/>
                 <outlet property="showEffectButton" destination="WKQ-q8-WJu" id="w2g-Ax-siY"/>
                 <outlet property="showSynthButton" destination="FGb-Ho-3xB" id="4K3-35-EdS"/>
@@ -54,7 +55,8 @@ DQ
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="play:" target="-2" id="K7F-8P-ttG"/>
+                            <action selector="playStop:" target="-2" id="kM8-sh-tly"/>
+                            <binding destination="-2" name="title" keyPath="playButtonTitle" id="Ztf-Uv-dtS"/>
                         </connections>
                     </button>
                 </subviews>
@@ -62,7 +64,7 @@ DQ
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="20" y="-137"/>
+            <point key="canvasLocation" x="-141" y="-193"/>
         </window>
         <viewController id="bn3-2j-x2c" userLabel="Popover View Controller"/>
         <popover id="dVa-wl-s6U">
