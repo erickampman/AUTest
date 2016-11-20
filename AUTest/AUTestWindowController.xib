@@ -8,10 +8,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AUTestWindowController" customModule="AUTest" customModuleProvider="target">
             <connections>
+                <outlet property="effectPopover" destination="72A-L9-pNz" id="DBn-Kq-6Jo"/>
                 <outlet property="playButton" destination="feP-bh-5yl" id="MYz-rS-6cF"/>
-                <outlet property="popover" destination="dVa-wl-s6U" id="VO3-3m-N1U"/>
                 <outlet property="showEffectButton" destination="WKQ-q8-WJu" id="w2g-Ax-siY"/>
                 <outlet property="showSynthButton" destination="FGb-Ho-3xB" id="4K3-35-EdS"/>
+                <outlet property="synthPopover" destination="dVa-wl-s6U" id="3rx-6T-g2I"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -35,6 +36,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="showSynth:" target="-2" id="yvJ-kK-vYh"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WKQ-q8-WJu">
                         <rect key="frame" x="126" y="13" width="113" height="32"/>
@@ -43,6 +47,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="showEffect:" target="-2" id="hJN-qm-tpW"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feP-bh-5yl">
                         <rect key="frame" x="239" y="13" width="113" height="32"/>
@@ -64,13 +71,9 @@ DQ
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-141" y="-193"/>
+            <point key="canvasLocation" x="-490" y="-278"/>
         </window>
-        <viewController id="bn3-2j-x2c" userLabel="Popover View Controller"/>
-        <popover id="dVa-wl-s6U">
-            <connections>
-                <outlet property="contentViewController" destination="bn3-2j-x2c" id="c1Y-0Q-VHi"/>
-            </connections>
-        </popover>
+        <popover behavior="t" id="dVa-wl-s6U" userLabel="synthPopover"/>
+        <popover behavior="t" id="72A-L9-pNz" userLabel="effectPopover"/>
     </objects>
 </document>
